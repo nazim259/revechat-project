@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>REVE Chat</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+        $(".adsshow").click(function(){
+        $duration = 30;
+        $('.seconds').text($duration);
+        $('.popup-wrap').fadeIn(500);
+        setTimeout(function(){
+            $("#exampleModalCenter").modal('hide');
+        }, 0);
+        
+        $myTimer = setInterval(function(){ startTimer() }, 1000);
+        $('.popup .btn-close').on("click",function(){
+            clearInterval($myTimer);
+            $('.popup-wrap').fadeOut(500);
+            $('.modal').fadeIn(500);
+        });
+        $('.close').on("click",function(){
+            $('.modal').fadeOut(500);
+        });
+
+        function startTimer(){
+            $duration--;
+            $('.seconds').text($duration);
+            if($duration==0){
+            clearInterval($myTimer);
+            $('.popup-wrap').fadeOut(500);
+            $('.modal').fadeIn(500);
+            }
+        }
+        });
+        }); 
+    </script>
+</head>
+
+<body> 
+    <!-- Ads Area -->
+    <div class="popup-wrap">
+        <div class="popup">
+            <div class="popup-timer"><span class="seconds"></span> second(s) left</div>
+            <div class="ads-content">
+                <h2>Ads Showing here</h2>
+                <img src="assets/img/ads.gif" alt="">
+            </div>
+            <div class="btn-close">x</div>
+        </div>
+    </div>
+
+    
+    <!--main section and header -->
+    <div id="container">
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="">
+            </div>
+            <h1>Almost Set... Integrate your Live Chat Now</h1>
+    <!-- tabs area -->    
+            <div class="fulltabarea">
+                <div class="tab-areaa">
+                    <header class="tabs-nav">
+                        <ul>
+                        <li class="active">
+                            <a href="#tab1"><i class="fas fa-code"></i> Install Code Manually <span>Basic JavaScript</span></a>
+                        </li>
+                        <li>
+                            <a href="#tab2"><i class="fas fa-th-large"></i> Install With Plugins <span>Wordpress, Magento, 42+</span></a></a>
+                        </li>
+                        <li><a href="#tab3"><i class="far fa-envelope-open"></i> Email Developers <span>Send Instruction</span></a></a>
+                        </li>
+                        </ul>
+                    </header>
+                </div>
+     <!-- tabs content -->           
+        <section class="tabs-content tab-cont-block">
+            <div id="tab1">
+            <p> Copy and paste the snippet before the closing tag on every page of your website </p>
+            <p id="copyText1"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                <button class="copppy" type="button" onclick="withJquery();"><i class="far fa-copy"></i> Copy Code</button>
+                <span id="copied-success" class="copied">
+                    Code Copied!
+                </span>
+            </p>
+            <p class="lefttext">Need help? <a href="#">Check Installation Guide</a></p>
+            <p class="righttext">Done? <a href="" class="adsshow" data-toggle="modal" data-target="#exampleModalCenter">Verify Your Installation</a></p>
+            
+            <!-- Modal -->
+            <div class="modal fadeOut" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Verify Your Installation</h5> <br>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Enter URL of the snippet page where the snippet is installed</p>
+                        <form action="">
+                            <input type="text" placeholder="www.yourwebsite.com"> <br>
+                        <button type="button" class="btn btn-primary">Check</button>
+                        </form>
+                    </div>    
+                </div>
+                </div>
+            </div>
+
+            </div>
+            <div id="tab2">
+            <p>Swtup REVE Chat with one of the following popular platforms.</p>
+             
+            <ul class="platformsss" style="margin-bottom: 20px;">
+                <li><a href="#"><img src="assets/img/wp.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/img/joomla.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/img/drupal.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/img/magento.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/img/zencart.png" alt=""></a></li>
+            </ul>
+
+            <ul class="platformsss">
+                <li><a href="#"><img src="assets/img/opencart.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/img/cscart.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/img/prestashop.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/img/shopify.png" alt=""></a></li>
+                <a href="#" class="viewall">View All Platforms</a>
+            </ul>   
+            </div>
+
+            <div id="tab3">
+            <p>We will send an email the installation code and instructions on how to get REVE chat installed.</p>
+            
+            <form action="">
+                <label>Recivers Email</label> <br>
+            <input type="email" placeholder="your_developer@email.com"> <br>
+            <label>Enter Message</label> <br>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Write your message..."></textarea><br>
+            <button type="submit" value="submit">Send Mail <i class="fab fa-telegram-plane"></i></button>Confirmation text
+            </form>
+
+            </div>
+        </section>
+        </div>
+        <a href="" class="dashboard">Skip to Dashboard</a>
+        </div>
+
+    
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+   
+</body>
+</html>
